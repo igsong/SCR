@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            id="kr.ac.kaist.se.interactionmodel.idl.diagram.BPMNChoreographyDiagramTypediagramType2"
+            name="BPMN Choreography Diagram"
+            type="BPMNChoreographyDiagram">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            class="kr.ac.kaist.se.interactionmodel.idl.diagram.BPMNChoreographyDiagramTypeProvider"
+            id="kr.ac.kaist.se.interactionmodel.idl.diagram.BPMNChoreographyDiagramTypeProvider"
+            name="BPMN Choreography Editor">
+         <diagramType
+               id="kr.ac.kaist.se.interactionmodel.idl.diagram.BPMNChoreographyDiagramTypediagramType2">
+         </diagramType>
+      </diagramTypeProvider>
+   </extension>
+
+</plugin>

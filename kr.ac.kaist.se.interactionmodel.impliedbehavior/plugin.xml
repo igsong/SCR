@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="kr.ac.kaist.se.interactionmodel.impliedbehavior.contribution1"
+            nameFilter="*.diagram"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="kr.ac.kaist.se.interactionmodel.impliedbehavior.menu1"
+               label="Interaction Analysis"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Create Unrolled Interaction Graph"
+               class="kr.ac.kaist.se.interactionmodel.popup.actions.GeneratingChoreographyAction"
+               menubarPath="kr.ac.kaist.se.interactionmodel.impliedbehavior.menu1/group1"
+               enablesFor="1"
+               id="kr.ac.kaist.se.interactionmodel.impliedbehavior.ShowUnrolledInteractionGraph">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

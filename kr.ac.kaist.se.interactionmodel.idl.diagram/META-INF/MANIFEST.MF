@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IDL Diagram
+Bundle-SymbolicName: kr.ac.kaist.se.interactionmodel.idl.diagram;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: kr.ac.kaist.se.interactionmodel.idl.diagram.IDLDiagramActivator
+Bundle-Vendor: igsong
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.graphiti;bundle-version="0.7.0",
+ org.eclipse.graphiti.ui;bundle-version="0.7.0",
+ org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.100",
+ org.eclipse.graphiti.examples.common;bundle-version="0.7.0",
+ org.eclipse.core.resources;bundle-version="3.6.0",
+ kr.ac.kaist.se.interactionmodel.idl;bundle-version="1.0.0",
+ org.eclipse.emf.ecore.edit;bundle-version="2.6.0",
+ org.eclipse.emf.ecore.editor;bundle-version="2.6.0",
+ org.eclipse.graphiti.pattern;bundle-version="0.7.0",
+ org.eclipse.graphiti.export.batik;bundle-version="0.8.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/grappa1_2.jar,
+ .

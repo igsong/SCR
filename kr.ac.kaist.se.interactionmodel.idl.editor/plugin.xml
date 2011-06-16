@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2011-02-21 04:16:24 igsong Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="kr.ac.kaist.se.interaction.idl.presentation.IdlModelWizardID"
+            name="%_UI_IdlModelWizard_label"
+            class="kr.ac.kaist.se.interaction.idl.presentation.IdlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/IdlModelFile.gif">
+         <description>%_UI_IdlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="kr.ac.kaist.se.interaction.idl.presentation.IdlEditorID"
+            name="%_UI_IdlEditor_label"
+            icon="icons/full/obj16/IdlModelFile.gif"
+            extensions="idl"
+            class="kr.ac.kaist.se.interaction.idl.presentation.IdlEditor"
+            contributorClass="kr.ac.kaist.se.interaction.idl.presentation.IdlActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.navigator.viewer"> 
+<viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer"> 
+<includes> 
+<contentExtension 
+isRoot="false" 
+pattern="kr.ac.kaist.se.interactionmodel.idl.modelContent"/> 
+</includes> 
+</viewerContentBinding> 
+</extension> 
+
+<extension point="org.eclipse.ui.navigator.navigatorContent"> 
+<navigatorContent 
+activeByDefault="true" 
+contentProvider="kr.ac.kaist.se.interactionmodel.idl.navigator.ProjectAdapterFactoryContentProvider" 
+id="kr.ac.kaist.se.interactionmodel.idl.modelContent" 
+labelProvider="kr.ac.kaist.se.interactionmodel.idl.navigator.ProjectAdapterFactoryLabelProvider" 
+name="Model content" 
+priority="normal"> 
+<triggerPoints> 
+<or> 
+<and> 
+<instanceof value="org.eclipse.core.resources.IResource"/> 
+<test 
+forcePluginActivation="true" 
+property="org.eclipse.core.resources.extension" 
+value="idl"/> 
+</and> 
+<instanceof value="org.eclipse.emf.ecore.resource.Resource"/> 
+<instanceof value="kr.ac.kaist.se.interaction.idl.Choreography"/> 
+</or> 
+</triggerPoints> 
+<possibleChildren> 
+<or> 
+<instanceof value="org.eclipse.emf.ecore.resource.Resource"/> 
+<instanceof value="kr.ac.kaist.se.interaction.idl.Choreography"/> 
+</or> 
+</possibleChildren> 
+</navigatorContent> 
+</extension> 
+
+</plugin>
